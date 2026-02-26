@@ -2,8 +2,10 @@
  * Configuração base para chamadas ao json-server.
  * No dev, o Vite faz proxy de /api para localhost:3032.
  */
-const URL_BASE_API = import.meta.env.DEV ? '/api' : '/api'
-
+const URL_BASE_API = import.meta.env.DEV
+  ? '/api'
+  : 'http://74.208.102.177:3032'
+  
 export function obterUrlBase() {
   return URL_BASE_API
 }
