@@ -4,7 +4,7 @@
  */
 const URL_BASE_API = import.meta.env.DEV
   ? '/api'
-  : 'http://74.208.102.177:3032'
+  : ''
   
 export function obterUrlBase() {
   return URL_BASE_API
