@@ -158,13 +158,13 @@ body {
   --grafico-margin-bottom: 16px;   /* 1rem */
   --cronometro-altura: 52px;      /* botão Início/Parar + gap */
   --altura-grafico-container: calc(
-  0.9 * (100vh
-    - var(--painel-padding-top)
-    - var(--painel-padding-bottom)
-    - var(--cabecalho-altura)
-    - var(--linha-dia-altura)
-    - var(--grafico-margin-bottom)
-    - var(--cronometro-altura))
+  100vh
+  - var(--painel-padding-top)
+  - var(--painel-padding-bottom)
+  - var(--cabecalho-altura)
+  - var(--linha-dia-altura)
+  - var(--grafico-margin-bottom)
+  - var(--cronometro-altura)
 );
 
   /* Cores de fundo pastel quando o cronômetro está rodando */
@@ -175,8 +175,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100vh;
   padding: 1rem;
-  padding-bottom: 1.5rem;
+  overflow: hidden;
   transition: background-color 0.5s ease;
 }
 
@@ -194,7 +195,7 @@ body {
 }
 
 .pagina-painel__grafico {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
