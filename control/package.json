@@ -9,8 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js",
+    "server:json": "json-server --watch db.json --port 3032",
     "start": "node server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run server\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
+    "dev:all:json": "concurrently \"npm run dev\" \"npm run server:json\""
   },
   "dependencies": {
     "express": "^4.21.0",

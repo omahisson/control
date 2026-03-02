@@ -162,7 +162,6 @@ export function PaginaInicio() {
       style={corFundoCronometro ? { backgroundColor: corFundoCronometro } : undefined}
     >
       <header className="pagina-painel__cabecalho">
-        <h1 className="pagina-painel__titulo">Control</h1>
       </header>
 
       <section className="pagina-painel__grafico">
