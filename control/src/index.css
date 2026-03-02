@@ -158,14 +158,14 @@ body {
   --grafico-margin-bottom: 16px;   /* 1rem */
   --cronometro-altura: 52px;      /* botão Início/Parar + gap */
   --altura-grafico-container: calc(
-    100vh
+  0.9 * (100vh
     - var(--painel-padding-top)
     - var(--painel-padding-bottom)
     - var(--cabecalho-altura)
     - var(--linha-dia-altura)
     - var(--grafico-margin-bottom)
-    - var(--cronometro-altura)
-  );
+    - var(--cronometro-altura))
+);
 
   /* Cores de fundo pastel quando o cronômetro está rodando */
   --fundo-pastel-verde: #dcfce7;
