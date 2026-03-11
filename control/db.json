@@ -1,12 +1,71 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "email": "teste@gmail.com",
       "senha": "123"
     }
   ],
   "sessoes": [
-    
-  ]
+    {
+      "id": "cb37",
+      "data": "2026-03-09",
+      "horaInicio": "10:39:42",
+      "duracaoSegundos": 4
+    },
+    {
+      "id": "f8d7",
+      "data": "2026-03-10",
+      "horaInicio": "10:50:29",
+      "duracaoSegundos": 2
+    },
+    {
+      "id": "aa9b",
+      "data": "2026-03-11",
+      "horaInicio": "10:59:30",
+      "duracaoSegundos": 2
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "9:08:37",
+      "duracaoSegundos": 39
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "1:13:13",
+      "duracaoSegundos": 7
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "11:14:53",
+      "duracaoSegundos": 12
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "11:19:07",
+      "duracaoSegundos": 6
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "11:31:12",
+      "duracaoSegundos": 119,
+      "tipo": "np013"
+    },
+    {
+      "id": null,
+      "data": "2026-03-11",
+      "horaInicio": "11:33:24",
+      "duracaoSegundos": 1,
+      "tipo": "np013"
+    }
+  ],
+  "acompanhamentoPorDia": {
+    "2026-03-09": "nao_acompanhado",
+    "2026-03-10": "registrado"
+  }
 }

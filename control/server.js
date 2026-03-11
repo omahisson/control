@@ -41,11 +41,43 @@ app.get('/sessoes', (req, res) => {
 app.post('/sessoes', (req, res) => {
   const db = lerDb()
   if (!Array.isArray(db.sessoes)) db.sessoes = []
-  const proximoId = Math.max(0, ...db.sessoes.map((s) => s.id || 0)) + 1
-  const sessao = { id: proximoId, ...req.body }
+  const proximoId = Math.max(0, ...db.sessoes.map((s) => (s.id != null ? Number(s.id) : 0))) + 1
+  const tipo = req.body.tipo === 'np013' ? 'np013' : 'normal'
+  const sessao = { id: proximoId, ...req.body, tipo }
   db.sessoes.push(sessao)
   escreverDb(db)
   res.status(201).json(sessao)
+})
+
+app.get('/acompanhamento', (req, res) => {
+  try {
+    const db = lerDb()
+    const porDia = db.acompanhamentoPorDia ?? {}
+    const data = req.query.data
+    const status = data ? (porDia[data] ?? 'nao_acompanhado') : porDia
+    res.json(data ? { status } : porDia)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.patch('/acompanhamento', (req, res) => {
+  try {
+    const db = lerDb()
+    if (!db.acompanhamentoPorDia) db.acompanhamentoPorDia = {}
+    const { data, status } = req.body
+    if (!data || !status) {
+      return res.status(400).json({ error: 'data e status são obrigatórios' })
+    }
+    if (status !== 'registrado' && status !== 'nao_acompanhado') {
+      return res.status(400).json({ error: 'status deve ser registrado ou nao_acompanhado' })
+    }
+    db.acompanhamentoPorDia[data] = status
+    escreverDb(db)
+    res.json({ data, status })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
 })
 
 // 👇 fallback para React Router
